@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Upsilon Intro to Mongoose with Persons Unknown</title>
+    <script src="/vendor/angular.min.js"></script>
+    <script src="/scripts/client.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link rel="stylesheet" href="/vendor/normalize.css" />
+    <link rel="stylesheet" href="/vendor/skeleton.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>So People Right</h1>
+      <!-- Submit a person -->
+      <section id="personSubmission" class="row">
+        <h2>Submit a person</h2>
+        <form id="personForm">
+          <div class="row">
+            <div class="three columns">
+              <label for="currentPersonFirstName">First Name:</label>
+              <input type="text" id="currentPersonFirstName" name="firstName" />
+            </div>
+
+            <div class="nine columns">
+              <label for="currentPersonLastName">Last Name:</label>
+              <input type="text" id="currentPersonLastName" name="lastName" />
+              <button>Submit</button>
+            </div>
+
+          </div>
+        </form>
+      </section>
+      <!-- See submitted people -->
+      <section id="persons" class="row">
+        <h2>Person Listing</h2>
+        <div id="personList">
+          <div class="person row">
+            <div class="three columns">
+              <label for="firstName">First Name:</label>
+              <input type="text" id="firstName" name="firstName" />
+            </div>
+
+            <div class="nine columns">
+              <label for="lastName">Last Name:</label>
+              <input type="text" id="lastName" name="lastName" />
+              <button class="update">Update</button>
+              <button class="delete">Delete</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

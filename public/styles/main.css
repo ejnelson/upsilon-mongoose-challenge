@@ -1,0 +1,28 @@
+h1 {
+  font-family: 'Abril Fatface', cursive;
+}
+
+#personList input {
+  border-style: none;
+  padding-left: 0;
+}
+
+#personSubmission h2 {
+  background-color: yellowgreen;
+}
+
+#personSubmission button {
+  background-color: yellowgreen;
+  border-color: yellowgreen;
+  color: white;
+}
+
+#persons h2 {
+  background-color: crimson;
+}
+
+#persons button {
+  background-color: crimson;
+  border-color: crimson;
+  color: white;
+}
