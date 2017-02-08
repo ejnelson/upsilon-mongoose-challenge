@@ -4,13 +4,15 @@
     <title>Upsilon Intro to Mongoose with Persons Unknown</title>
     <script src="/vendor/angular.min.js"></script>
     <script src="/scripts/client.js"></script>
+    <script src="/scripts/person.controller.js" charset="utf-8"></script>
+    <script src="/scripts/person.service.js" charset="utf-8"></script>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link rel="stylesheet" href="/vendor/normalize.css" />
     <link rel="stylesheet" href="/vendor/skeleton.css" />
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
-  <body>
-    <main class="container">
+  <body ng-app="personApp" >
+    <main class="container" ng-controller="PersonController">
       <h1>So People Right</h1>
       <!-- Submit a person -->
       <section id="personSubmission" class="row">
