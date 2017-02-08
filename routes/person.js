@@ -30,8 +30,20 @@ router.post('/', function (req, res) {
 
 // @TODO: Complete this route using Person.findByIdAndUpdate
 router.put('/', function (req, res) {
-  res.send('Not yet implemented');
+  console.log('help');
+  var id = req.body._id;
+  var person = new Person(req.body);
+  console.log('id received', id);
+  Person.findByIdAndUpdate(id, person,function (err) {
+      if (err) {
+        res.sendStatus(500);
+        return;
+      }
+
+      res.sendStatus(204);
+  });
 });
+
 
 router.delete('/:id', function (req, res) {
   var id = req.params.id;

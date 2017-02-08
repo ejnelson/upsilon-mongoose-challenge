@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body ng-app="personApp" >
-    <main class="container" ng-controller="PersonController">
+    <main class="container" ng-controller="PersonController as vm">
       <h1>So People Right</h1>
       <!-- Submit a person -->
       <section id="personSubmission" class="row">
@@ -21,13 +21,26 @@
           <div class="row">
             <div class="three columns">
               <label for="currentPersonFirstName">First Name:</label>
-              <input type="text" id="currentPersonFirstName" name="firstName" />
+              <input type="text" id="currentPersonFirstName" ng-model="vm.firstName" name="firstName" />
             </div>
 
             <div class="nine columns">
               <label for="currentPersonLastName">Last Name:</label>
-              <input type="text" id="currentPersonLastName" name="lastName" />
-              <button>Submit</button>
+              <input type="text" id="currentPersonLastName" ng-model="vm.lastName" name="lastName" />
+
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="three columns">
+              <label for="currentPersonHomeTown">Hometown:</label>
+              <input type="text" id="currentPersonHomeTown" ng-model="vm.homeTown" name="homeTown" />
+            </div>
+
+            <div class="nine columns">
+              <label for="currentPersonFavMovie">Favorite Movie:</label>
+              <input type="text" id="currentPersonfavMovie" ng-model="vm.favMovie" name="favMovie" />
+              <button ng-click="vm.addPerson(vm.firstName,vm.lastName,vm.homeTown,vm.favMovie)">Submit</button>
             </div>
 
           </div>
@@ -37,18 +50,28 @@
       <section id="persons" class="row">
         <h2>Person Listing</h2>
         <div id="personList">
-          <div class="person row">
+          <div class="person row" ng-repeat="person in vm.peopleList">
             <div class="three columns">
-              <label for="firstName">First Name:</label>
-              <input type="text" id="firstName" name="firstName" />
+              <label for="firstName">First Name: {{person.firstName}}</label>
+              <input ng-model="person.newFirstName" type="text" id="firstName" name="firstName" />
             </div>
 
-            <div class="nine columns">
-              <label for="lastName">Last Name:</label>
-              <input type="text" id="lastName" name="lastName" />
-              <button class="update">Update</button>
-              <button class="delete">Delete</button>
+            <div class="three columns">
+              <label for="lastName">Last Name: {{person.lastName}}</label>
+              <input ng-model="person.newLastName" type="text" id="lastName" name="lastName" />
+
             </div>
+            <div class="three columns">
+              <label for="homeTown">Hometown: {{person.homeTown}}</label>
+              <input ng-model="person.newHomeTown" type="text" id="homeTown" name="homeTown" />
+            </div>
+
+            <div class="three columns">
+              <label for="favMovie">Favorite Movie: {{person.favMovie}}</label>
+              <input ng-model="person.newFavMovie" type="text" id="favMovie" name="favMovie" />
+            </div>
+            <button ng-click="vm.changePerson(person.newFirstName,person.newLastName,person.newHomeTown,person.newFavMovie,person._id)" class="update">Update</button>
+            <button ng-click="vm.deletePerson(person._id)" class="delete">Delete</button>
           </div>
         </div>
       </section>
